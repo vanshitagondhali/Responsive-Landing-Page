@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Landing Page</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+/* Navbar */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:transparent;
+    transition:0.4s;
+    z-index:1000;
+}
+nav.scrolled{
+    background:#222;
+    box-shadow:0 2px 10px rgba(0,0,0,0.3);
+}
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+}
+nav ul{
+    display:flex;
+    list-style:none;
+}
+nav ul li{
+    margin-left:20px;
+}
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    padding:8px 12px;
+    transition:0.3s;
+}
+/* Hover Effect */
+nav ul li a:hover{
+    background:#ff9800;
+    border-radius:5px;
+    color:black;
+}
+/* Hero Section */
+.hero{
+    height:100vh;
+    background:linear-gradient(to right, #4facfe, #00f2fe);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+.hero h1{
+    font-size:50px;
+}
+.hero p{
+    margin-top:15px;
+    font-size:20px;
+}
+/* Content Section */
+.content{
+    padding:100px 20px;
+    text-align:center;
+}
+.content h2{
+    margin-bottom:20px;
+    font-size:35px;
+}
+/* Responsive */
+@media(max-width:768px){
+    nav{
+        flex-direction:column;
+        padding:15px;
+    }
+    nav ul{
+        margin-top:10px;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    nav ul li{
+        margin:10px 0;
+    }
+    .hero h1{
+        font-size:35px;
+    }
+    .hero p{
+        font-size:18px;
+    }
+}
+</style>
+</head>
+<body>
+<!-- Navbar -->
+<nav id="navbar">
+    <div class="logo">My Website</div
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+<!-- Hero Section -->
+<section class="hero">
+    <div>
+        <h1>Responsive Landing Page</h1>
+        <p>Interactive Navigation Menu</p>
+    </div>
+</section>
+<!-- Content -->
+<section class="content">
+    <h2>Welcome</h2>
+    <p>
+        Scroll down to see the navigation bar change color.
+        Hover over menu items to see effects.
+    </p>
+</section>
+<script>
+/* Navbar color change on scroll */
+window.addEventListener("scroll", function(){
+    let navbar = document.getElementById("navbar");
+    if(window.scrollY > 50){
+        navbar.classList.add("scrolled");
+    }
+    else{
+        navbar.classList.remove("scrolled");
+    }
+});
+</script>
+</body>
+</html>
